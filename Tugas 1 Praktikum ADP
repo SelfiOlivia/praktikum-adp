@@ -1,0 +1,9 @@
+a = int(input('sisi alas pertama: '))
+b = int(input('sisi alas kedua: '))
+c = int(input('sisi miring alas: '))
+t = int(input('tinggi prisma segitiga: '))
+
+luas_permukaan = (2*(1/2)*a*b) + ((a+b+c)*t)
+volume_prisma = 1/2*a*b*t
+print('luas permukaan prisma =', luas_permukaan)
+print('volume prisma=', volume_prisma) 
