@@ -1,0 +1,35 @@
+#Program Pesan Antar Makanan Online
+print("SELAMAT DATANG")
+print("Silahkan pilih paket makan yang anda inginkan: ")
+print('========================================')
+
+harga_paket = {
+    "A": 25000,
+    "B": 30000,
+    "C": 45000
+}
+
+def ongkir(jarak):
+    if jarak < 0.5:
+        return 0
+    elif 0.5 <= jarak <= 1.5:
+        return 10000
+    else:
+        return 20000
+      
+for paket, harga in harga_paket.items():
+    print("Paket {}: Rp{}".format(paket, harga))
+
+pilihan_paket = input("Masukkan pilihan paket (A/B/C): ").upper()
+if pilihan_paket not in harga_paket:
+    print("Paket tidak tersedia.")
+else:
+    jarak = float(input("Masukkan jarak rumah Anda ke restoran (dalam km) = "))
+    total_harga_paket = harga_paket[pilihan_paket]
+    ongkos_kirim = ongkir(jarak)
+
+    total_biaya = total_harga_paket + ongkos_kirim
+    print("Biaya total yang perlu Anda bayar adalah = Rp{}".format(total_biaya))
+    
+print('========================================')
+print('Terima kasih, silakan berkunjung kembali!')
