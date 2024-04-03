@@ -1,0 +1,89 @@
+print('Nama : Selfi Olivia')
+print('Nim : 2310431033')
+print('Shift : 3')
+print()
+
+print('Program Daftar Belanja')
+print()
+
+print('      ====================================================')
+print('               SELAMAT DATANG DI SOL-BRACELET ')
+print('                      OFFICIAL SHOP')
+print('       -Decorate Your Hands With Our handmade bracelets- ')                                
+print('    ========================================================')
+print()
+print()
+print('Silakan Pilih Item Yang Tersedia!')
+
+gelang = 0
+print()
+print(' ========== Daftar Item ==========')
+print()
+print('1. Gelang Couple           Rp 60.000')
+print('2. Gelang Tali + Hiasan    Rp 30.000')
+print('3. Gelang Manik            Rp 25.000')
+print('4. Gelang Tali Polos       Rp 15.000')
+print()
+print(' Diskon 25% untuk pembelian Gelang Couple lebih dari 3 pcs !!!')
+print(' Diskon 10% untuk pembelian lebih dari Rp 200.000 !!!')
+print(' Tunggu apa lagi, buruan checkout! ')
+print()
+print(' ===================================')
+print()
+
+pilih_item = input("Apakah anda ingin memesan (y/n) ? ").upper()
+
+while pilih_item not in ["Y", "N"]:
+    print("Pilih Y/y = yes dan N/n= No")
+    mau_pesan = input("Apakah anda ingin memesan (y/n) ? ").upper()
+
+if pilih_item == "Y":
+    while pilih_item == "Y":
+        item = input("Masukkan pilihan item (nomor item) : ")
+        if item == "1":
+            gc = int(input("Jumlah Gelang couple yang kamu inginkan : "))
+            if gc > 3:
+                harga = (gc * 60000) - (gc * 60000 * 0.25)
+                print("Yeay! Harga telah termasuk diskon untuk pembelian lebih dari 3 pcs!")
+            else:
+                harga = gc * 60000
+        elif item == "2":
+            gth = int(input("Jumlah Gelang tali hias yang kamu inginkan : "))
+            harga = gth * 30000
+        elif item == "3":
+            gm = int(input("Jumlah Gelang manik yang kamu inginkan : "))
+            harga = gc * 25000
+        elif item == "4":
+            gp = int(input("Jumlah Gelang Polos yang kamu inginkan : "))
+            harga = gp * 15000
+        else:
+            print("Mohon maaf, Item yang kamu inginkan tidak tersedia")
+        gelang += harga
+        pilih_item = input("Apakah anda ingin memesan lagi (y/n) ? ").upper()
+
+if pilih_item == "N":
+    if gelang > 200000:
+        diskon_total = gelang * 0.1
+        gelang -= diskon_total
+        print("Yeay! Harga telah termasuk diskon karena pembelian lebih dari Rp 200.000!")
+    if gelang == 0:
+        print("Silakan pilih terlebih dahulu")
+        
+print()
+print('Total Pesanan anda : Rp ' + str(gelang))
+print()
+print(' ========== Struk Perbelanjaan ==========')
+print()
+if 'gc' in locals():
+    print('     Gelang couple      = ' + str(gc))
+if 'gth' in locals():
+    print('     Gelang Tali Hiasan = ' + str(gth))
+if 'gm' in locals():
+    print('     Gelang Manik       = ' + str(gm))
+if 'gp' in locals():
+    print('     Gelang Polos       = ' + str(gp))
+print()
+print('     TOTAL HARGA      = Rp ' + str(gelang))
+print()
+print('   ========== TERIMA KASIH ==========')
+print('             -SOL-BRACELET-         ')
