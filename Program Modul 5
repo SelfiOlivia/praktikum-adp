@@ -1,0 +1,22 @@
+print('Nama : Selfi Olivia')
+print('NIM : 2310431033')
+print('Program Array Nilai x Pada Tabel')
+print() 
+
+nilai_x = list(range(-10, 11))
+
+nilai_f_x = []
+for x in nilai_x:
+    if x > 0:
+        nilai_f_x.append(x**2 + 2*x)
+    elif x < 0:
+        nilai_f_x.append(1/x)
+    elif x == 0:
+        nilai_f_x.append(10)
+    else:
+        print()
+
+print("| x\t| f(x)\t\t|")
+print("-------------------------")
+for x, f_x in zip(nilai_x, nilai_f_x):
+    print(f"| {x}\t|  {f_x:.3f}\t|")
