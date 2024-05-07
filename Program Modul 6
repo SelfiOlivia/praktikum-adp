@@ -1,0 +1,64 @@
+print('Nama : Selfi Olivia')
+print('NIM  : 2310431033')
+print('Program Operasi Matriks array 2D')
+
+n = int(input("Masukkan ukuran matriks: "))
+
+print("Masukkan nilai-nilai untuk matriks A:")
+matrix_a = []
+for i in range(n):
+    row = [int(input()) for i in range(n)]
+    matrix_a.append(row)
+
+print("Masukkan nilai-nilai untuk matriks B:")
+matrix_b = []
+for i in range(n):
+    row = [int(input()) for i in range(n)]
+    matrix_b.append(row)
+
+print('Matriks A: ')
+for row in matrix_a:
+    print(row)
+
+print('Matriks B: ')
+for row in matrix_b:
+    print(row)
+
+matrix_c = []
+for i in range (n):
+    row = []
+    for j in range (n):
+        hasil = 0
+        for k in range(n):
+            hasil += matrix_a[i][k] * matrix_b[k][j]
+        row.append(hasil)
+    matrix_c.append(row)       
+
+print('Hasil Perkalian Matriks A dan B:')
+for row in matrix_c:
+    print(row)
+
+tr_a = []
+for i in range (n):
+    row = []
+    for j in range(n):
+        row.append(matrix_a[j][i])
+    tr_a.append(row)    
+
+tr_b = []
+for i in range (n):
+    row = []
+    for j in range(n):
+        row.append(matrix_b[j][i])
+    tr_b.append(row) 
+
+matrix_d = []
+for i in range (n):
+    row = []
+    for j in range(n):
+        row.append(tr_a[i][j] + tr_b[i][j])
+    matrix_d.append(row)
+
+print('Hasil Penjumlahan Matriks A transpose dan B transpose:')
+for row in matrix_d:
+    print(row)
