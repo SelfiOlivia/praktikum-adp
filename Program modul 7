@@ -1,0 +1,61 @@
+# Program Modul 7
+print('Nama : Selfi Olivia ')
+print('NIM  : 2310431033')
+print('Program Fungsi Modul 7')
+print()
+
+def input_data(n):
+    data = []
+    for i in range(n):
+        nilai = float(input('Masukkan nilai ke-{} = '.format(i + 1)))
+        data.append(nilai)
+    return data
+
+# Menghitung mean (rata-rata)
+def mean(data):
+    total = 0
+    jumlah_data = len(data)
+    for nilai in data:
+        total += nilai
+    mean = total / jumlah_data
+    return mean
+
+# Menghitung modus
+def modus(data):
+    frekuensi = {}
+    for nilai in data:
+        if nilai in frekuensi:
+            frekuensi[nilai] += 1
+        else:
+            frekuensi[nilai] = 1
+
+    f_max = max(frekuensi.values())
+    modus_result = []
+    for nilai, frek in frekuensi.items():
+        if frek == f_max:
+            modus_result.append(nilai)
+
+    return modus_result
+
+# Menghitung variance
+def variance(data):
+    mean_2 = mean(data)
+    n = len(data)
+    total = 0
+    for x in data:
+        total += (x - mean_2)**2
+    variance = total/n
+    return variance
+
+def tampilkan_hasil(data):
+    print("| Statistik   | Nilai       |")
+    print("|-------------|-------------|")
+    print("| Mean        | {:<12.2f}|".format(mean(data)))
+    modus_str = ', '.join(str(nilai) for nilai in modus(data))
+    print("| Modus       | {:<11} |".format(modus_str))
+    print("| Variance    | {:<12.2f}|".format(variance(data)))
+
+
+n = int(input("Masukkan jumlah data: "))
+data = input_data(n)
+tampilkan_hasil(data)
