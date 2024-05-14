@@ -23,13 +23,16 @@ def mean(data):
 # Menghitung modus
 def modus(data):
     frekuensi = {}
+    f_max = 0
     for nilai in data:
         if nilai in frekuensi:
             frekuensi[nilai] += 1
         else:
-            frekuensi[nilai] = 1
+            frekuensi[nilai] = 1    
+        if frekuensi[nilai] > f_max:
+            f_max = frekuensi[nilai]
+        
 
-    f_max = max(frekuensi.values())
     modus_result = []
     for nilai, frek in frekuensi.items():
         if frek == f_max:
