@@ -1,0 +1,104 @@
+print('Nama : Selfi Olivia')
+print('2310431033')
+print('Shift 3')
+print('Program Modul 8 : Dictionary dan File Text')
+
+FILE_NAME = 'films.txt'
+
+def masukkan_data():
+    data = {}
+    with open(FILE_NAME, 'a') as file:
+        pass
+    with open(FILE_NAME, 'r') as file:
+        for line in file:
+            title, writer, director, year = line.strip().split('|')
+            data[title] = {
+                'Penulis': writer,
+                'Sutradara': director,
+                'Tahun': year
+            }
+    return data
+
+def simpan(data):
+    with open(FILE_NAME, 'w') as file:
+        for title, details in data.items():
+            file.write(f"{title}|{details['Penulis']}|{details['Sutradara']}|{details['Tahun']}\n")
+
+def tambah(data):
+    title = input("Masukkan judul film : ")
+    writer = input("Masukkan nama penulis skenario : ")
+    director = input("Masukkan nama sutradara : ")
+    year = input("Masukkan tahun rilis : ")
+    
+    data[title] = {
+        'Penulis': writer,
+        'Sutradara': director,
+        'Tahun': year
+    }
+    simpan(data)
+    print("Film berhasil ditambahkan!")
+
+def hapus(data):
+    title = input("Masukkan judul film yang ingin dihapus: ")
+    if title in data:
+        del data[title]
+        simpan(data)
+        print("Film berhasil dihapus!")
+    else:
+        print("Film tidak ditemukan!")
+
+def edit(data):
+    title = input("Masukkan judul film yang ingin diedit: ")
+    if title in data:
+        writer = input("Masukkan nama penulis skenario baru: ")
+        director = input("Masukkan nama sutradara baru: ")
+        year = input("Masukkan tahun rilis baru: ")
+        
+        data[title] = {
+            'Penulis': writer,
+            'Sutradara': director,
+            'Tahun': year
+        }
+        simpan(data)
+        print("Film berhasil diedit!")
+    else:
+        print("Film tidak ditemukan!")
+
+def tampilkan(data):
+    if data != []:
+        for title, details in data.items():
+            print()
+            print(f"  Judul     : {title}")
+            print(f"  Penulis   : {details['Penulis']}") 
+            print(f"  Sutradara : {details['Sutradara']}")
+            print(f"  Tahun     : {details['Tahun']}")
+            print("======================================")
+    else:
+        print("Tidak ada data film yang tersimpan.")
+
+def pilih():
+    data = masukkan_data()
+    while True:
+        print("\nMenu:")
+        print("1. Menambah data")
+        print("2. Menghapus data")
+        print("3. Mengedit data")
+        print("4. Menampilkan data")
+        print("5. Keluar")
+        choice = input("Pilih menu: ")
+        
+        if choice == '1':
+            tambah(data)
+        elif choice == '2':
+            hapus(data)
+        elif choice == '3':
+            edit(data)
+        elif choice == '4':
+            tampilkan(data)
+        elif choice == '5':
+            break
+        else:
+            print("Pilihan tidak valid.")
+
+# Jalankan fungsi main langsung
+pilih()
