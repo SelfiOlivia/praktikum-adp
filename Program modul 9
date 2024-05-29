@@ -1,0 +1,53 @@
+from termcolor import cprint
+
+print("Nama : Selfi Olivia")
+print("Nim  : 2310431033")
+print("Shift 3")
+print('Program Modul 9 : Membuat Logo MIT')
+print() 
+
+#baris1
+for a in range (4):
+	cprint(" "*3,"red","on_red",end=" ")
+	print(" ",end="")
+cprint(" "*8,"red","on_red")
+
+#baris2
+for b in range(3):
+    cprint(" "*3,"red","on_red",end=" ")
+    print(" ",end="")
+print()
+
+#baris3
+for c in range(3):
+    cprint(" "*3,"red","on_red",end=" ")
+    print(" ",end="")
+cprint (" "*3,"grey","on_dark_grey",end=" ")
+print(" ",end="")
+cprint(" "*3,"red","on_red")
+ 
+#baris4
+for d in range(3):
+    cprint(" "*3,"red","on_red",end=" ")
+    print(" ",end="")
+cprint (" "*3,"grey","on_dark_grey",end=" ")
+print(" ",end="")
+
+cprint(" "*3,"red","on_red")
+cprint(" "*3,"red","on_red",end=" ")
+print(" "*6,end="")
+cprint(" "*3,"red","on_red",end=" ")
+print(" ",end="")
+cprint (" "*3,"grey","on_dark_grey",end=" ")
+print(" ",end="")
+cprint(" "*3,"red","on_red")
+
+#baris5
+cprint(" "*3,"red","on_red",end=" ")
+print(" "*6,end="")
+cprint(" "*3,"red","on_red",end=" ")
+print(" ",end="")
+
+cprint (" "*3,"grey","on_dark_grey",end=" ")
+print(" ",end="")
+cprint(" "*3,"red","on_red")
